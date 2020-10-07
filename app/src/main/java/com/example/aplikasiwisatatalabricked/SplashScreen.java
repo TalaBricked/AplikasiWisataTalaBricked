@@ -28,6 +28,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 4000L); //4000 L = 4 detik
+        }, 5000L); //5000 L = 5 detik
     }
 }
