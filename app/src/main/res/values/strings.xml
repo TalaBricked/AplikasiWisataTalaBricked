@@ -2,4 +2,6 @@
     <string name="app_name">Aplikasi Wisata Tala Bricked</string>
     <string name="daftar_kategori_aplikasi_wisata">daftar kategori aplikasi wisata</string>
     <string name="todo">todo</string>
+    <string name="todoo">TODO</string>
+    <string name="toodo">TODO</string>
 </resources>
