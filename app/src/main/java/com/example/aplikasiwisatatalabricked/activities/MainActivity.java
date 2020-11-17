@@ -1,4 +1,4 @@
-package com.example.aplikasiwisatatalabricked;
+package com.example.aplikasiwisatatalabricked.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import com.example.aplikasiwisatatalabricked.R;
 
 import java.util.ArrayList;
 import java.util.Calendar;
