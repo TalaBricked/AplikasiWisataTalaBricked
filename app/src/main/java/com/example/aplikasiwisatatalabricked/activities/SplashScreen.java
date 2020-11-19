@@ -1,15 +1,13 @@
-package com.example.aplikasiwisatatalabricked;
+package com.example.aplikasiwisatatalabricked.activities;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+
+import com.example.aplikasiwisatatalabricked.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -28,6 +26,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 4000L); //4000 L = 4 detik
+        }, 5000L); //5000 L = 5 detik
     }
 }
