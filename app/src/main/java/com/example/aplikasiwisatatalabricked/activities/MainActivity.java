@@ -22,7 +22,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MainAdapter.onSelectData {
+public class MainActivity extends AppCompatActivity implements MainAdapter.onSelectData, MainActivityy {
 
     RecyclerView rvMainMenu;
     LayoutMarginDecoration gridMargin;
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
                 RecyclerView.VERTICAL, false);
         rvMainMenu.setLayoutManager(mLayoutManager);
         gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
+        RecyclerView rMvainMenu = null;
         rMvainMenu.addItemDecoration(gridMargin);
         rvMainMenu.setHasFixedSize(true);
 
