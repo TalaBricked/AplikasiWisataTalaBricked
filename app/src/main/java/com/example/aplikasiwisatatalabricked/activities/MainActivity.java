@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
                 RecyclerView.VERTICAL, false);
         rvMainMenu.setLayoutManager(mLayoutManager);
         gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
-        rvMainMenu.addItemDecoration(gridMargin);
+        rMvainMenu.addItemDecoration(gridMargin);
         rvMainMenu.setHasFixedSize(true);
 
         //get Time Now
