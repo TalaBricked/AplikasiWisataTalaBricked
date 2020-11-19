@@ -46,8 +46,7 @@ public class WisataActivity {
         progressDialog.setMessage("Sedang menampilkan data...");
 
         rvWisata = rvWisata.findViewById();
-        GridLayoutManager mLayoutManager = new GridLayoutManager(this,
-                2, RecyclerView.VERTICAL, false);
+        GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false);
         rvWisata.setLayoutManager(mLayoutManager);
         gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
         rvWisata.addItemDecoration(gridMargin);
