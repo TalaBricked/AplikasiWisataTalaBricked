@@ -1,4 +1,4 @@
-package com.example.aplikasiwisatatalabricked.activities;
+package com.example.aplikasiwisatatalabricked.modelwisata;
 
 public class ModelMain {
     public ModelMain(String wisata, int ic_destination) {

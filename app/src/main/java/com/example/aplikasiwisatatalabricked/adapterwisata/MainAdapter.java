@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aplikasiwisatatalabricked.activities.MainActivity;
-import com.example.aplikasiwisatatalabricked.activities.ModelMain;
+import com.example.aplikasiwisatatalabricked.modelwisata.ModelMain;
 
 import java.util.List;
 

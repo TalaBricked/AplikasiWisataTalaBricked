@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aplikasiwisatatalabricked.adapterwisata.WisataAdapter;
+import com.example.aplikasiwisatatalabricked.modelwisata.ModelWisata;
 
 import org.json.JSONArray;
 import org.json.JSONException;

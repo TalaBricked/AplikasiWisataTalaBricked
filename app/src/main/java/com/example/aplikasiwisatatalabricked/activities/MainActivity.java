@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.aplikasiwisatatalabricked.R;
 import com.example.aplikasiwisatatalabricked.adapterwisata.MainAdapter;
+import com.example.aplikasiwisatatalabricked.modelwisata.ModelMain;
 
 import java.util.ArrayList;
 import java.util.Calendar;
