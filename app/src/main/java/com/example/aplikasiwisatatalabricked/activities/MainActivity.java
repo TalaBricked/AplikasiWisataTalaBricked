@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         rvMainMenu.setLayoutManager(mLayoutManager);
         gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
         RecyclerView rMvainMenu = null;
+        assert false;
         rMvainMenu.addItemDecoration(gridMargin);
         rvMainMenu.setHasFixedSize(true);
 

@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.aplikasiwisatatalabricked.R;
 import com.example.aplikasiwisatatalabricked.adapterwisata.WisataAdapter;
 import com.example.aplikasiwisatatalabricked.modelwisata.ModelWisata;
 
@@ -20,9 +22,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WisataActivity {
+import static androidx.recyclerview.widget.RecyclerView.*;
 
-    RecyclerView rvWisata;
+public abstract class WisataActivity {
+
+    public RecyclerView rvWisata;
     LayoutMarginDecoration gridMargin;
     WisataAdapter kulinerAdapter;
     ProgressDialog progressDialog;
@@ -31,33 +35,37 @@ public class WisataActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.clone(savedInstanceState);
         progressDialog.setContentView();
 
-        tbWisata = rvWisata.findViewById();
+        tbWisata = tbWisata.findViewById();
         tbWisata.setTitle("Daftar Wisata Purwakarta");
         setSupportActionBar(tbWisata);
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+}
 
-        progressDialog = new ProgressDialog(this);
+    private void setSupportActionBar(Toolbar tbWisata) {
+    }
+
+    private ActionBar getSupportActionBar() {
+        return null;
+    }
+
+    progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Mohon Tunggu");
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Sedang menampilkan data...");
 
-        rvWisata = rvWisata.findViewById();
-        GridLayoutManager mLayoutManager = new GridLayoutManager(this,
-                2, RecyclerView.VERTICAL, false);
+    rvWisata = abstract findViewById(R.id.rvWisata);
+    GridLayoutManager mLayoutManager = new GridLayoutManager(this,
+            2, VERTICAL, false);
         rvWisata.setLayoutManager(mLayoutManager);
-        gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
+    gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
         rvWisata.addItemDecoration(gridMargin);
         rvWisata.setHasFixedSize(true);
 
-        getWisata();
-    }
-
-    private void setSupportActionBar(Toolbar tbWisata) {
-    }
+    getWisata();
 
     private void getWisata() {
         progressDialog.show();
@@ -116,5 +124,4 @@ public class WisataActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-}
 }
