@@ -1,9 +1,12 @@
-package com.example.aplikasiwisatatalabricked.activities;
+package com.example.aplikasiwisatatalabricked.adapterwisata;
 
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.aplikasiwisatatalabricked.activities.MainActivity;
+import com.example.aplikasiwisatatalabricked.activities.ModelMain;
 
 import java.util.List;
 

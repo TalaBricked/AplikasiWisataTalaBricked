@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.aplikasiwisatatalabricked.R;
+import com.example.aplikasiwisatatalabricked.adapterwisata.MainAdapter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
