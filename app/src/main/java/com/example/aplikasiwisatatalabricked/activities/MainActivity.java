@@ -1,20 +1,20 @@
 package com.example.aplikasiwisatatalabricked.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.aplikasiwisatatalabricked.BuildConfig;
 import com.example.aplikasiwisatatalabricked.R;
 import com.example.aplikasiwisatatalabricked.adapterwisata.MainAdapter;
 import com.example.aplikasiwisatatalabricked.modelwisata.ModelMain;
@@ -55,7 +55,12 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         rvMainMenu.setLayoutManager(mLayoutManager);
         gridMargin = new LayoutMarginDecoration(2, Tools.dp2px(this, 4));
         RecyclerView rMvainMenu = null;
-        assert false;
+        if (BuildConfig.DEBUG) {
+            throw new AssertionError("Assertion failed");
+        }
+        if (BuildConfig.DEBUG) {
+            throw new AssertionError("Assertion failed");
+        }
         rMvainMenu.addItemDecoration(gridMargin);
         rvMainMenu.setHasFixedSize(true);
 
@@ -84,10 +89,8 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
 
     @Override
     public void onSelected(ModelMain mdlMain) {
-        switch (mdlMain.getTxtName()) {
-            case "Wisata":
-                startActivityForResult(new Intent(MainActivity.this, WisataActivity.class), 1);
-                break;
+        if ("Wisata".equals(mdlMain.getTxtName())) {
+            startActivityForResult(new Intent(MainActivity.this, WisataActivity.class), 1);
         }
     }
 

@@ -12,4 +12,15 @@ public class ModelWisata {
 
     public void setKategoriWisata(String kategori) {
     }
+
+    public String getIdWisata() {
+        return null;
+    }
+
+    public String getTxtNamaWisata() {
+        return null;
+    }
+
+    public void getGambarWisata() {
+    }
 }

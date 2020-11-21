@@ -66,7 +66,6 @@
                                 android:contentDescription="@string/todo"
                                 android:padding="10dp"
                                 android:src="@drawable/ic_dtl_wisata"
-                                android:layout_alignParentLeft="true"
                                 app:tint="@android:color/white" />
 
                             <TextView
@@ -76,9 +75,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_marginStart="20dp"
                                 android:layout_toEndOf="@+id/ivNamaWisata"
-                                android:textSize="14sp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_toRightOf="@+id/ivNamaWisata" />
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -96,8 +93,7 @@
                                 android:contentDescription="@string/todo"
                                 android:padding="10dp"
                                 android:src="@drawable/ic_dtl_desc"
-                                app:tint="@android:color/white"
-                                android:layout_alignParentLeft="true" />
+                                app:tint="@android:color/white" />
 
                             <TextView
                                 android:id="@+id/tvDescWisata"
@@ -106,9 +102,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_marginStart="20dp"
                                 android:layout_toEndOf="@+id/ivDescWisata"
-                                android:textSize="14sp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_toRightOf="@+id/ivDescWisata" />
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
