@@ -58,9 +58,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.onSel
         if (BuildConfig.DEBUG) {
             throw new AssertionError("Assertion failed");
         }
-        if (BuildConfig.DEBUG) {
-            throw new AssertionError("Assertion failed");
-        }
+        assert false;
         rMvainMenu.addItemDecoration(gridMargin);
         rvMainMenu.setHasFixedSize(true);
 
