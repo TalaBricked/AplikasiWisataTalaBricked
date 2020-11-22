@@ -1,6 +1,5 @@
 package com.example.aplikasiwisatatalabricked.activities;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -14,12 +13,8 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.target.ViewTarget;
 import com.example.aplikasiwisatatalabricked.R;
 import com.example.aplikasiwisatatalabricked.modelwisata.ModelWisata;
-import com.google.android.gms.common.api.Api;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +26,11 @@ public class DetailWisataActivity extends AppCompatActivity {
     ImageView imgWisata;
     String idWisata, NamaWisata, Desc;
     ModelWisata modelWisata;
+    private Object DetailWisata;
+
+    public DetailWisataActivity(Object detailWisata) {
+        DetailWisata = detailWisata;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +54,13 @@ public class DetailWisataActivity extends AppCompatActivity {
             tvDescWisata = findViewById(R.id.tvDescWisata);
 
             //get Image
-            final ViewTarget<ImageView, Drawable> into = Glide.with(this)
-                    .load(modelWisata.getGambarWisata())
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(imgWisata);
 
             getDetailWisata();
         }
     }
 
     private void getDetailWisata() {
-        AndroidNetworking.get(Api.DetailWisata)
+        AndroidNetworking.get((String) DetailWisata)
                 .addPathParameter("id", idWisata)
                 .setPriority(Priority.HIGH)
                 .build()
@@ -105,4 +101,5 @@ public class DetailWisataActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

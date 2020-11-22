@@ -18,7 +18,6 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.aplikasiwisatatalabricked.R;
 import com.example.aplikasiwisatatalabricked.adapterwisata.WisataAdapter;
 import com.example.aplikasiwisatatalabricked.modelwisata.ModelWisata;
-import com.google.android.gms.common.api.Api;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,12 +30,15 @@ public class WisataActivity {
 
     private Object Wisata;
 
+    public WisataActivity(Object wisata) {
+        Wisata = wisata;
+    }
+
     public class WisataActivity extends AppCompatActivity implements WisataAdapter.onSelectData, WisataActivityy {
 
         RecyclerView rvWisata;
         LayoutMarginDecoration gridMargin;
-        WisataAdapter kulinerAdapter;
-        ProgressDialog progressDialog;
+        ProgressDialog progressDialog = new ProgressDialog(this);
         List<ModelWisata> modelKuliner = new ArrayList<>();
         Toolbar tbWisata;
 
@@ -47,11 +49,10 @@ public class WisataActivity {
 
             tbWisata = findViewById(R.id.toolbar_wisata);
             tbWisata.setTitle("Daftar Wisata Purwakarta");
-            setSupportActionBar(tbWisata);
+            setSupportActionBar();
             assert getSupportActionBar() != null;
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Mohon Tunggu");
             progressDialog.setCancelable(false);
             progressDialog.setMessage("Sedang menampilkan data...");
@@ -67,7 +68,7 @@ public class WisataActivity {
             getWisata();
         }
 
-        private void setSupportActionBar(Toolbar tbWisata) {
+        private void setSupportActionBar() {
         }
 
         private void getWisata() {
@@ -76,7 +77,6 @@ public class WisataActivity {
                     .setPriority(Priority.HIGH)
                     .build()
                     .getAsJSONObject(new JSONObjectRequestListener() {
-                        private ANError anError;
 
                         @Override
                         public void onResponse(JSONObject response) {
@@ -105,9 +105,7 @@ public class WisataActivity {
 
                         }
 
-                        /**
-                         * @param anError
-                         */
+
 
                     });
         }
