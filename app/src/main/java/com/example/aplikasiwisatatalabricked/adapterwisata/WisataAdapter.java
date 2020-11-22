@@ -21,4 +21,7 @@ public class WisataAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return 0;
     }
+
+    public interface onSelectData {
+    }
 }

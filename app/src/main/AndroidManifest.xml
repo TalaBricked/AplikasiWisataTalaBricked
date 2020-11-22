@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.aplikasiwisatatalabricked">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -7,21 +8,28 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.SplashScreen">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m"
+        android:fullBackupContent="@xml/backup_descriptor"
+        tools:ignore="AllowBackup">
+        <activity android:name=".activities.SplashScreen" />
+        <activity android:name=".activities.DetailWisataActivity" />
+        <activity android:name=".activities.WisataActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.WisataActivity$WisataActivity" />
+        <activity android:name=".activities.WisataActivityImpl" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -29,6 +37,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="Google Maps API KEY" />
-
     </application>
-    </manifest>
+
+</manifest>

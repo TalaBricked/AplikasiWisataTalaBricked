@@ -72,7 +72,7 @@ public class WisataActivity {
 
         private void getWisata() {
             progressDialog.show();
-            AndroidNetworking.get(Wisata)
+            AndroidNetworking.get((String) Wisata)
                     .setPriority(Priority.HIGH)
                     .build()
                     .getAsJSONObject(new JSONObjectRequestListener() {
@@ -100,21 +100,15 @@ public class WisataActivity {
                             }
                         }
 
+                        @Override
+                        public void onError(ANError anError) {
+
+                        }
+
                         /**
                          * @param anError
                          */
-                        @Override
-                        public void onError(ANError anError) {
 
-                            this.anError = anError;
-                        }
-
-                        @Override
-                        public void onError(ANError anError) {
-                            progressDialog.dismiss();
-                            Toast.makeText(WisataActivity.this,
-                                    "Tidak ada jaringan internet!", Toast.LENGTH_SHORT).show();
-                        }
                     });
         }
 
