@@ -7,4 +7,7 @@ public class ModelMain {
     public String getTxtName() {
         return null;
     }
+
+    public int getImgSrc() {
+    }
 }

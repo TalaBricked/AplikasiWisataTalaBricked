@@ -1,35 +1,72 @@
 package com.example.aplikasiwisatatalabricked.adapterwisata;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aplikasiwisatatalabricked.activities.MainActivity;
 import com.example.aplikasiwisatatalabricked.modelwisata.ModelMain;
 
 import java.util.List;
 
-public class MainAdapter extends RecyclerView.Adapter {
-    public MainAdapter(List<ModelMain> lsMainMenu, MainActivity mainActivity) {
+/**
+ * Created by Azhar Rivaldi on 22-12-2019.
+ */
+
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
+
+    private List<ModelMain> items;
+    private MainAdapter.onSelectData onSelectData;
+
+    public interface onSelectData {
+        void onSelected(ModelMain mdlMain);
     }
 
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public MainAdapter(List<ModelMain> items, MainAdapter.onSelectData xSelectData) {
+        this.items = items;
+        this.onSelectData = xSelectData;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(android.R.attr.layout.item_grid_main, parent, false);
+        return new ViewHolder(v);
+    }
 
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final ModelMain data = items.get(position);
+        holder.imgMainData.setImageResource(data.getImgSrc());
+        holder.tvMainData.setText(data.getTxtName());
+        holder.cvMainData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSelectData.onSelected(data);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
-    public interface onSelectData {
+    //Class Holder
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+        public CardView cvMainData;
+        public TextView tvMainData;
+        public ImageView imgMainData;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            cvMainData = itemView.findViewById(android.R.attr.id.cvMainData);
+            tvMainData = itemView.findViewById(android.R.attr.id.tvMainData);
+            imgMainData = itemView.findViewById(android.R.attr.id.imgMainData);
+        }
     }
 }

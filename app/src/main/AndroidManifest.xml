@@ -18,7 +18,8 @@
         android:fullBackupContent="@xml/backup_descriptor"
         tools:ignore="AllowBackup">
         <activity android:name=".activities.SplashScreen" />
-        <activity android:name=".activities.DetailWisataActivity" />
+        <activity android:name=".activities.DetailWisataActivity"
+            tools:ignore="Instantiatable" />
         <activity android:name=".activities.WisataActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".activities.MainActivity">
@@ -28,8 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.WisataActivity$WisataActivity" />
-        <activity android:name=".activities.WisataActivityImpl" />
+        <activity android:name=".activities.WisataActivity$WisataActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activities.WisataActivityImpl"
+            tools:ignore="Instantiatable" />
 
         <meta-data
             android:name="com.google.android.gms.version"
