@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.triogili,
             R.drawable.pantairajaampat,
             R.drawable.danausentani,
-            R.drawable.bali1,
+            R.drawable.pulaubali,
             R.drawable.tamanbunaken,
             R.drawable.puncakjaya,
             R.drawable.tanahtoraja,
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 deskripsiTempatWisata,
                 gambarTempatWisata);
 
-        ListView listDaftarTempatWisata = (ListView)findViewById(R.id.listDaftarWisata);
+        ListView listDaftarTempatWisata = findViewById(R.id.listDaftarWisata);
         listDaftarTempatWisata.setAdapter(listWisataAdapter);
 
         listDaftarTempatWisata.setOnItemClickListener(new AdapterView.OnItemClickListener() {
