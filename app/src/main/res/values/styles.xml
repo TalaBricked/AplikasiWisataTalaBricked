@@ -13,4 +13,6 @@
 
     <style name="Toolbar.TitleText">titletext</style>
 
+    <style name="Toolbar">tool</style>
+
 </resources>

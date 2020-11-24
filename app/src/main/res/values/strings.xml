@@ -19,4 +19,6 @@
     <string name="nama_wisata" tools:ignore="DuplicateDefinition">Nama Wisata</string>
     <string name="lokasi_wisata" tools:ignore="DuplicateDefinition">Lokasi Wisata</string>
     <string name="deskripsi_wisata">Deskripsi Wisata</string>
+    <string name="todooo">todo</string>
+    <string name="lokasi">lokasi</string>
 </resources>
