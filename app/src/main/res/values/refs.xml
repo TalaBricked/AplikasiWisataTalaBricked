@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <drawable name="pulaukomodo">pulau</drawable>
-    <drawable name="triogili">triogili</drawable>
-    <drawable name="pantairajaampat">pantairajaampat</drawable>
-    <drawable name="danausentani">danausentani</drawable>
-    <drawable name="bali1">bali1</drawable>
-    <drawable name="tamanbunaken" />
-    <drawable name="puncakjaya">puncakjaya</drawable>
-    <drawable name="tanahtoraja">tanahtoraja</drawable>
-    <drawable name="candiborobudur">candiborobudur</drawable>
-    <drawable name="tmii">tmii</drawable>
 </resources>
