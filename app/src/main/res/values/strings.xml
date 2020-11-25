@@ -21,4 +21,8 @@
     <string name="deskripsi_wisata">Deskripsi Wisata</string>
     <string name="todooo">todo</string>
     <string name="lokasi">lokasi</string>
+    <string name="login">login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="todo">TODO</string>
 </resources>
