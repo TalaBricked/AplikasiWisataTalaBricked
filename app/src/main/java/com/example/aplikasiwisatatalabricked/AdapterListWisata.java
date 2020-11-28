@@ -1,71 +1,75 @@
 package com.example.aplikasiwisatatalabricked;
 
-import android.database.DataSetObserver;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-public class AdapterListWisata implements ListAdapter {
-    public AdapterListWisata(MainActivity mainActivity, String[] namaTempatWisata, String[] lokasiTempatWisata, Integer[] deskripsiTempatWisata, Integer[] gambarTempatWisata) {
+import com.bumptech.glide.Glide;
+import com.example.aplikasiwisatatalabricked.model.WisataItem;
+
+import java.util.ArrayList;
+
+public class AdapterListWisata extends RecyclerView.Adapter<AdapterListWisata.ViewHolder> {
+    private ArrayList<WisataItem> mWisataData;
+    private Context mContext;
+
+    public AdapterListWisata(ArrayList<WisataItem> mWisataData, Context mContext) {
+        this.mWisataData = mWisataData;
+        this.mContext = mContext;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.itemlist, parent, false));
     }
 
     @Override
-    public boolean areAllItemsEnabled() {
-        return false;
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+        holder.namaWisata.setText(mWisataData.get(position).getNama());
+        Glide.with(mContext)
+                .load(mWisataData
+                .get(position)
+                .getGambarUrl())
+                .into(holder.gambarWisata);
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, DetailActivity.class);
+                intent.putExtra("namaWisata", mWisataData.get(position).getNama());
+                intent.putExtra("kategori", mWisataData.get(position).getKategori());
+                intent.putExtra("gambarWisata", mWisataData.get(position).getGambarUrl());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
-    public boolean isEnabled(int i) {
-        return false;
+    public int getItemCount() {
+        return mWisataData.size();
     }
 
-    @Override
-    public void registerDataSetObserver(DataSetObserver dataSetObserver) {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-    }
+        private TextView namaWisata;
+        private ImageView gambarWisata;
+        private LinearLayout item;
 
-    @Override
-    public void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
 
-    }
-
-    @Override
-    public int getCount() {
-        return 0;
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public boolean hasStableIds() {
-        return false;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
-    }
-
-    @Override
-    public int getItemViewType(int i) {
-        return 0;
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return 1;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
+            namaWisata = itemView.findViewById(R.id.namaWisata);
+            gambarWisata = itemView.findViewById(R.id.gambarWisata);
+            item = itemView.findViewById(R.id.list_item);
+        }
     }
 }

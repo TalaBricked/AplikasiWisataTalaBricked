@@ -1,62 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="false"
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
     android:layout_margin="5dp"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="9dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
         android:orientation="horizontal"
-        tools:ignore="UselessParent"
-        android:layout_marginStart="9dp">
+        tools:ignore="UselessParent">
 
         <ImageView
             android:id="@+id/gambarWisata"
-            android:layout_width="58dp"
-            android:layout_height="match_parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:contentDescription="@string/tod"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            android:contentDescription="@string/tod" />
+            android:src="@mipmap/ic_launcher" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/namaWisata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nama_wisata"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:id="@+id/lokasiWisata"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/lokasi_wisata"
-                android:textSize="11sp"
-                tools:ignore="SmallSp" />
-
-            <TextView
-                android:id="@+id/deskripsiWisata"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/deskripsi_wisata"
-                android:ems="3"
-                android:maxLines="2"
-                android:textSize="11sp"
-                tools:ignore="SmallSp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

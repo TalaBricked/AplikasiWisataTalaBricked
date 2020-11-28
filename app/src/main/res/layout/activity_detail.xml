@@ -24,194 +24,48 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/ivGambarTempatWisata"
+                    android:id="@+id/gambar_wisata"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="300dp"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/ic_launcher"
                     android:contentDescription="@string/todooo" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15.5dp"
-                        android:layout_marginTop="130dp"
-                        android:text="@string/taman_wisata"
-                        android:textColor="#ffff"
-                        android:textSize="15sp"
-                        android:layout_marginStart="15.5dp" />
-
-                    <TextView
-                        android:id="@+id/tvNamaTempatWisata"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="15dp"
-                        android:text="@string/nama_wisata"
-                        android:textColor="#ffff"
-                        android:textSize="15sp"
-                        android:paddingStart="15dp"
-                        tools:ignore="RtlSymmetry" />
-
-                </LinearLayout>
-
                 <TextView
-                    android:id="@+id/txtDescTempatWisata"
+                    android:id="@+id/nama_wisata"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ivGambarTempatWisata"
+                    android:layout_below="@+id/gambar_wisata"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/deskripsi"
                     android:textColor="#000"
-                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
                     android:layout_marginStart="15dp" />
 
                 <TextView
-                    android:id="@+id/tvDeskripsiTempatWisata"
+                    android:id="@+id/judul_kategori"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtDescTempatWisata"
+                    android:layout_below="@+id/nama_wisata"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Kategori :"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp" />
+
+                <TextView
+                    android:id="@+id/detail_kategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/judul_kategori"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:text="@string/deskripsi_wisata"
                     android:textColor="#868484"
-                    android:textSize="11sp"
+                    android:textSize="15sp"
                     tools:ignore="SmallSp" />
-
-                <TextView
-                    android:id="@+id/txtLokasiTempatWisata"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvDeskripsiTempatWisata"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/lokasi"
-                    android:textColor="#000"
-                    android:textSize="12sp"
-                    android:layout_marginStart="15dp" />
-
-                <TextView
-                    android:id="@+id/tvLokasiTempatWisata"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtLokasiTempatWisata"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:text="@string/lokasi_wisata"
-                    android:textColor="#868484"
-                    android:textSize="11sp"
-                    tools:ignore="SmallSp" />
-
-                <View
-                    android:id="@+id/gariPanjang"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/tvLokasiTempatWisata"
-                    android:layout_marginTop="13dp"
-                    android:background="#cccaca" />
-
-                <LinearLayout
-                    android:id="@+id/layoutButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/gariPanjang"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvInfoWikipedia"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left|center"
-                        android:paddingLeft="16dp"
-                        android:text="@string/wikipedia"
-                        android:textColor="#224aea"
-                        tools:ignore="RtlHardcoded,RtlSymmetry" />
-
-                    <TextView
-                        android:id="@+id/tvBackToList"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:paddingLeft="16dp"
-                        android:text="@string/back_to_list"
-                        android:textColor="#000000"
-                        android:paddingStart="16dp"
-                        tools:ignore="RtlSymmetry" />
-
-                    <TextView
-                        android:id="@+id/tvInfoMapLokasi"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right|center"
-                        android:paddingRight="16dp"
-                        android:text="@string/lihat_map"
-                        android:textColor="#d6105c"
-                        tools:ignore="RtlHardcoded,RtlSymmetry" />
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            app:cardCornerRadius="4dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:padding="10dp"
-                    android:id="@+id/tvWebView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/webview"
-                    android:textColor="#000"
-                    android:textSize="15sp"/>
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            app:cardCornerRadius="4dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <WebView
-                    android:id="@+id/wvTampilkan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <WebView
-                    android:layout_below="@+id/wvTampilkan"
-                    android:id="@+id/wvTampilkanMaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="720dp"/>
 
             </RelativeLayout>
 
